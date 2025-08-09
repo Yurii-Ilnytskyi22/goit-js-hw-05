@@ -1,11 +1,13 @@
-const getUserNames = users => {
-  const names = users.map(user => user.name);
-  return names.toSorted();
-};
+const sortByDescendingFriendCount = users =>
+  users.toSorted((a, b) => b.friends.length - a.friends.length);
 
 console.log(
-  getUserNames([
-    { name: 'Moore Hensley', friends: ['Sharron Pace'], gender: 'male' },
+  sortByDescendingFriendCount([
+    {
+      name: 'Moore Hensley',
+      friends: ['Sharron Pace'],
+      gender: 'male',
+    },
     {
       name: 'Sharlene Bush',
       friends: ['Briana Decker', 'Sharron Pace'],
